@@ -35,6 +35,3 @@
 ### `npm run deploy` - публикация проекта на github pages
 ***
 
-##GitHub Pages:
-* [Ссылка на проект](https://stasyansky.github.io/mesto/index.html)
-
