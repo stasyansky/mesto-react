@@ -2,8 +2,12 @@ import React from 'react';
 
 function ImagePopup({ card, onClose }) {
     return (
-        <div tabIndex="-1" className={`popup popup-preview ${card.link ? 'popup_opened' : ''}`}>
-            <div className="popup-preview__container">
+        <div
+            tabIndex="-1"
+            className={`popup popup-preview ${card.link ? 'popup_opened' : ''}`}
+            onClick={onClose}
+        >
+            <div className="popup-preview__container" onClick={event => event.stopPropagation()}>
                 <button
                     type="button"
                     className="popup__close-btn popup-preview__close-btn"
