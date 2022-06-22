@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup({ isOpen, onAddPlace, onClose }) {
@@ -8,8 +8,8 @@ function AddPlacePopup({ isOpen, onAddPlace, onClose }) {
         inputLinkPicRef.current.value = '';
     }, [isOpen]);
 
-    const inputTitlePicRef = React.useRef('');
-    const inputLinkPicRef = React.useRef('');
+    const inputTitlePicRef = useRef('');
+    const inputLinkPicRef = useRef('');
 
     function handleSubmit(e) {
         e.preventDefault();

@@ -41,12 +41,14 @@ function App() {
         api.toggleLike({cardId: card._id, isLikedByMe: isLiked})
             .then((newCard) => {
                 setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-            });
+            })
+            .catch(err => console.error(err));
     }
 
     function handleCardDelete(card) {
         api.cardDelete(card._id)
-            .then(() => setCards((state) => state.filter(c => c._id !== card._id)));
+            .then(() => setCards((state) => state.filter(c => c._id !== card._id)))
+            .catch(err => console.error(err));
     }
 
     function handleEditAvatarClick() {
